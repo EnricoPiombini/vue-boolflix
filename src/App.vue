@@ -3,7 +3,7 @@
 <TheHeader @movieInfo="movieInfo"></TheHeader>
 
 
-<TheMain></TheMain>
+<TheMain :moviesOver="movieList"  ></TheMain>
 
   </div>
 

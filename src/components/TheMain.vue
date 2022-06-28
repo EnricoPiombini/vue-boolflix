@@ -1,25 +1,29 @@
 <template>
-<div>
-<div class="movieList">
+    <div>
 
-</div>
+        <main>
+            <div class="movieList">
 
-<div class="seriesList">
+            </div>
 
-
-</div>
-
+            <div class="seriesList">
 
 
-</div>
+            </div>
+
+
+        </main>
+    </div>
 
 </template>
 
 
 <script>
 
-export default{
-
+export default {
+props:{
+    moviesOver:Array,
+}
 }
 
 
@@ -27,5 +31,4 @@ export default{
 </script>
 
 <style lang="scss">
-
 </style>
