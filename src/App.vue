@@ -1,4 +1,4 @@
-https://api.themoviedb.org/3/search/movie?api_key=b143daf0620a61a9ad7283983f428869&query=avatar&langauge=it-IT
+<!-- https://api.themoviedb.org/3/search/movie?api_key=b143daf0620a61a9ad7283983f428869&query=avatar&langauge=it-IT -->
 
 <template>
   <div>
