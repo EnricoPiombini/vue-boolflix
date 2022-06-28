@@ -1,29 +1,34 @@
 <template>
     <div>
+        <div class="container">
+            <main>
+                <div class="row row-cols-4">
+                    <div class="col" v-for="movie in moviesOver" :key="movie.title">
+                        <TheCard :info="movie"></TheCard>
+                    </div>
+                </div>
 
-        <main>
-            <div class="movieList">
-
-            </div>
-
-            <div class="seriesList">
+                <div class="seriesList">
 
 
-            </div>
+                </div>
 
 
-        </main>
+            </main>
+        </div>
     </div>
 
 </template>
 
 
 <script>
+import TheCard from './TheCard.vue';
 
 export default {
-props:{
-    moviesOver:Array,
-}
+    props: {
+        moviesOver: Array,
+    },
+    components: { TheCard }
 }
 
 

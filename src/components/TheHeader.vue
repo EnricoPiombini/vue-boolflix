@@ -6,7 +6,7 @@
         </div>
         <div class="text-end">
             <input type="text">
-            <button class="btn btn-outline">Search</button>
+            <button class="btn btn-outline" @click="getMovie()"  >Search</button>
         </div>
 
     </div>
@@ -19,21 +19,23 @@ import axios from "axios";
 export default {
     data() {
         return {
-            movieApi: 'https://api.themoviedb.org/3/search/movie?api_key=b143daf0620a61a9ad7283983f428869&query=avatar&langauge=it-IT&rating',
             movieList: [],
+            movieApi: "https://api.themoviedb.org/3/search/movie?api_key=b143daf0620a61a9ad7283983f428869&query=avatar&langauge=it-IT"
 
 
         }
     },
 
-    mounted() {
-        axios.get(this.movieApi).then((response) => {
-            this.movieList = response.data.results
-            this.$emit('movieInfo', this.movieList)
-            // return this.movieList
-        });
 
-    }
+
+    mounted() {
+    axios.get(this.movieApi).then((response) => {
+    this.movieList = response.data.results
+    this.$emit('movieInfo', this.movieList)
+    return this.movieList
+     });
+
+     }
 }
 
 
