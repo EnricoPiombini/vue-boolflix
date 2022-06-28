@@ -1,6 +1,8 @@
 <template>
   <div>
-<TheHeader></TheHeader>
+<TheHeader @movieInfo="movieInfo"></TheHeader>
+
+
 <TheMain></TheMain>
 
   </div>
@@ -17,7 +19,21 @@ export default {
   components: {
     TheHeader,
     TheMain
+},
+
+data(){
+  return{
+    movieList:[],
+  }
+},
+
+methods:{
+  movieInfo(arrayMovies){
+    this.movieList = arrayMovies;
+  }
 }
+
+
 }
 </script>
 

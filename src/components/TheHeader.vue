@@ -1,9 +1,13 @@
 <template>
 
     <div>
-        <h1 class="text-center">BOOLFLIX</h1>
-
-
+        <div>
+            <h1 class="text-center">BOOLFLIX</h1>
+        </div>
+        <div class="text-end">
+            <input type="text">
+            <button class="btn btn-outline">Search</button>
+        </div>
 
     </div>
 
@@ -21,13 +25,17 @@ export default {
 
         }
     },
+
     mounted() {
         axios.get(this.movieApi).then((response) => {
             this.movieList = response.data.results
-            return this.movieList
+            this.$emit('movieInfo', this.movieList)
+            // return this.movieList
         });
+
     }
 }
+
 
 
 
