@@ -1,5 +1,15 @@
 <template>
 <div>
+<div class="movieList">
+
+</div>
+
+<div class="seriesList">
+
+
+</div>
+
+
 
 </div>
 
