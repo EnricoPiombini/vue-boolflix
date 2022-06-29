@@ -1,45 +1,49 @@
 <template>
     <div>
-         <div class="container">
+        <div class="container">
             <main>
-                <div class="row row-cols-4">
-                    <div class="col" v-for="movie in movieList" :key="movie.id">
-                     {{movie.original_title}}
-                  </div>
+
+                <div class="row row-cols-5">
+                    <div class="col" v-for="(movie, i) in movieResults" :key="i">
+                        <div class="content">
+                            {{ movie.original_title }}
+                        </div>
+                    </div>
+
+                    <div class="col" v-for="movie in tvResults" :key="movie.id">
+                        <div class="content">
+                            {{ movie.original_title }}
+                        </div>
+                    </div>
+
+
                 </div>
-
-                <div class="seriesList">
-
-
-                </div>
-
-
             </main>
-        </div> 
+        </div>
     </div>
-
 </template>
 
 
 <script>
+import { state } from '@/store'
 
 export default {
-  
-    
-    
-    props:{
-        movieList:Array
+
+
+    data() {
+        return {}
     },
 
-    data(){
-return{
-//     searchText:""
- }
-    }
-    
+    computed: {
+        movieResults() {
+            return state.movieList
+        },
+        tvResults() {
+            return state.tvList
+        }
     }
 
-
+}
 
 </script>
 

@@ -5,8 +5,8 @@
             <h1 class="text-center">BOOLFLIX</h1>
         </div>
         <div class="text-end">
-            <input type="text" v-model="userInput">
-            <button class="btn btn-outline" @click="onsearchMovies">Search</button>
+            <input type="text" v-model="state.searchText">
+            <button class="btn btn-outline" @click="onSearchMovies()">Search</button>
         </div>
 
     </div>
@@ -15,21 +15,26 @@
 
 
 <script>
+import { fetchData, state } from '@/store'
 
 export default {
-    data() {
-        return {
-            userInput: ""
-
-
+    methods:{
+        onSearchMovies(){
+            fetchData("movie")
+            fetchData("tv")
         }
     },
-    methods: {
-        onsearchMovies() {
-            this.$emit("searchTextChanged", this.userInput)
-        }
+computed:{
+    state(){
+        return state
     }
 }
+
+}
+    
+
+
+        
 </script>
 
 <style lang="scss">

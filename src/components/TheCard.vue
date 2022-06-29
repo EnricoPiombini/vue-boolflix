@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
 <!-- <h3> {{info.title}} </h3>
 <ul>
@@ -9,7 +9,7 @@
 
 </ul> -->
 
-    </div>
+    <!-- </div>
 
 </template>
 
@@ -27,4 +27,4 @@ props:{
 </script>
 
 <style lang="scss">
-</style>
+</style> --> -->
