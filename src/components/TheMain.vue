@@ -1,47 +1,40 @@
 <template>
-    <div>
-        <div class="container">
-            <main>
 
-                <div class="row row-cols-5">
-                    <div class="col" v-for="(movie, i) in movieResults" :key="i">
-                        <div class="content">
-                            {{ movie.original_title }}
-                        </div>
-                    </div>
-
-                    <div class="col" v-for="movie in tvResults" :key="movie.id">
-                        <div class="content">
-                            {{ movie.original_title }}
-                        </div>
-                    </div>
-
-
-                </div>
-            </main>
-        </div>
+    <div class="container">
+        <main>
+            <TheMovieCard v-for="movie in movieResults" :key="movie.id"></TheMovieCard>
+            <TheTvCard v-for="movie in tvResults" :key="movie.title"></TheTvCard>
+        </main>
     </div>
 </template>
 
 
 <script>
 import { state } from '@/store'
+import TheMovieCard from './components/TheMovieCard.vue';
+import TheTvCard from './components/TheTvCard.vue';
+
+
 
 export default {
-
-
     data() {
-        return {}
+        return {};
+    },
+
+
+    components: {
+        TheMovieCard,
+        TheTvCard
     },
 
     computed: {
         movieResults() {
-            return state.movieList
+            return state.movieList;
         },
         tvResults() {
-            return state.tvList
+            return state.tvList;
         }
-    }
+    },
 
 }
 
