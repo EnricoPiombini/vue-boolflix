@@ -1,17 +1,14 @@
-<!-- https://api.themoviedb.org/3/search/movie?api_key=b143daf0620a61a9ad7283983f428869&query=avatar&langauge=it-IT -->
-
 <template>
   <div>
-<TheHeader @movieInfo="movieInfo"></TheHeader>
-
-
-<TheMain :moviesOver="movieList"  ></TheMain>
+    <TheHeader @searchTextChanged="onSearchTextChanged"></TheHeader>
+    <TheMain :movieList="movieList" ></TheMain>
 
   </div>
 
 </template>
 
 <script>
+import axios from "axios";
 import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
 
@@ -21,19 +18,34 @@ export default {
   components: {
     TheHeader,
     TheMain
-},
+  },
 
-data(){
-  return{
-    movieList:[],
-  }
-},
+  data() {
+    return {
+      movieList: [],
+      searchText: ""
 
-methods:{
-  movieInfo(arrayMovies){
-    this.movieList = arrayMovies;
+    }
+  },
+
+  methods: {
+
+    onSearchTextChanged(userInput) {
+      this.searchText = userInput;
+
+      axios.get("https://api.themoviedb.org/3/search/movie", {
+
+        params: {
+          api_key: "b143daf0620a61a9ad7283983f428869",
+          query: this.searchText,
+          language: "it-IT",
+        }
+
+      }).then((resp) => {
+        this.movieList = resp.data.results;
+      });
+    },
   }
-}
 
 
 }

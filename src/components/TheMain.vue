@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="container">
+         <div class="container">
             <main>
                 <div class="row row-cols-4">
-                    <div class="col" v-for="movie in moviesOver" :key="movie.title">
-                        <TheCard :info="movie"></TheCard>
-                    </div>
+                    <div class="col" v-for="movie in movieList" :key="movie.id">
+                     {{movie.original_title}}
+                  </div>
                 </div>
 
                 <div class="seriesList">
@@ -15,21 +15,29 @@
 
 
             </main>
-        </div>
+        </div> 
     </div>
 
 </template>
 
 
 <script>
-import TheCard from './TheCard.vue';
 
 export default {
-    props: {
-        moviesOver: Array,
+  
+    
+    
+    props:{
+        movieList:Array
     },
-    components: { TheCard }
-}
+
+    data(){
+return{
+//     searchText:""
+ }
+    }
+    
+    }
 
 
 
