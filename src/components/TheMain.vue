@@ -1,18 +1,24 @@
 <template>
 
     <div class="container">
-        <main>
-            <TheMovieCard v-for="movie in movieResults" :key="movie.id"></TheMovieCard>
-            <TheTvCard v-for="movie in tvResults" :key="movie.title"></TheTvCard>
-        </main>
+        <div class="row">
+            <div class="col-3" v-for="movie in movieResults" :key="movie.id">
+                <TheMovieCard :movie="movie"></TheMovieCard>
+            </div>
+
+            <div class="col-3" v-for="movie in tvResults" :key="movie.id">
+                <TheMovieCard :movie="movie"></TheMovieCard>
+            </div>
+        </div>
     </div>
+
 </template>
 
 
 <script>
 import { state } from '@/store'
-import TheMovieCard from './components/TheMovieCard.vue';
-import TheTvCard from './components/TheTvCard.vue';
+import TheMovieCard from './TheMovieCard.vue';
+
 
 
 
@@ -20,13 +26,6 @@ export default {
     data() {
         return {};
     },
-
-
-    components: {
-        TheMovieCard,
-        TheTvCard
-    },
-
     computed: {
         movieResults() {
             return state.movieList;
@@ -35,7 +34,7 @@ export default {
             return state.tvList;
         }
     },
-
+    components: { TheMovieCard }
 }
 
 </script>
