@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <TheHeader></TheHeader>
-    <TheMain></TheMain>
+  <div id="app">
+    <div class="container">
+      <TheHeader></TheHeader>
+      <TheMain></TheMain>
 
+    </div>
   </div>
-
 </template>
 
 <script>
@@ -17,18 +18,18 @@ export default {
   components: {
     TheHeader,
     TheMain,
- 
+
   },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Bebas Neue', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  background-color: rgb(0, 0, 0);
 }
 </style>

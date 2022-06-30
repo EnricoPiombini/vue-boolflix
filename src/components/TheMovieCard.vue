@@ -1,13 +1,10 @@
 <template>
-    <div class="card">
+    <div class="my-card p-3">
         <div class="card card-img">
-            <img :src="posterImg" alt="">
+            <img :src="posterImg" alt="" class="w-100">
 
         </div>
-
-
-        <div class="card-body">
-
+        <div class="card-body p-2">
             <div class="card-title ">
                 <h4>{{ movie.title }}</h4>
                 <p>{{ movie.original_title }}</p>
@@ -23,14 +20,8 @@
                     <i v-else class="fa-regular fa-star"></i>
                 </span>
             </div>
-
-
         </div>
     </div>
-
-
-
-
 </template>
 
 <script>
@@ -52,9 +43,9 @@ export default {
             }
             return this.movie.original_language;
         },
-        
+
         posterImg() {
-            if(this.movie.poster_path === null){
+            if (this.movie.poster_path === null) {
                 return "../img/placeholder-movie.png"
             }
             return "https://image.tmdb.org/t/p/" + "w342" + this.movie.poster_path;
@@ -70,5 +61,11 @@ export default {
 </script>
 
 
-<style>
+<style lang="scss" scoped>
+
+.my-card{
+    height: 100%;
+}
+
+
 </style>
