@@ -52,7 +52,11 @@ export default {
             }
             return this.movie.original_language;
         },
+        
         posterImg() {
+            if(this.movie.poster_path === null){
+                return "../img/placeholder-movie.png"
+            }
             return "https://image.tmdb.org/t/p/" + "w342" + this.movie.poster_path;
         },
 
