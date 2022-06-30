@@ -3,11 +3,13 @@
     <div class="container">
         <div class="row">
             <div class="col-3" v-for="movie in movieResults" :key="movie.id">
-                <TheMovieCard :movie="movie"></TheMovieCard>
+                <TheMovieCard :movie="movie"
+                :vote="movie.vote_average"></TheMovieCard>
             </div>
 
             <div class="col-3" v-for="movie in tvResults" :key="movie.id">
-                <TheMovieCard :movie="movie"></TheMovieCard>
+                <TheMovieCard :movie="movie"
+                :vote="movie.vote_average"></TheMovieCard>
             </div>
         </div>
     </div>
@@ -40,4 +42,5 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/general.scss"
 </style>

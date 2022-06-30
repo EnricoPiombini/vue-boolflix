@@ -16,7 +16,8 @@ export default {
   name: 'App',
   components: {
     TheHeader,
-    TheMain
+    TheMain,
+ 
   },
 }
 </script>
